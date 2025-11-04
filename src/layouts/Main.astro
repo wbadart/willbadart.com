@@ -61,6 +61,8 @@ const amHome = Astro.url.pathname === '/';
 
     main {
       display: flex;
+      max-width: 950px;
+      margin: auto;
       flex-direction: column;
       gap: var(--size-2);
     }
@@ -117,5 +119,9 @@ const amHome = Astro.url.pathname === '/';
     font-weight: var(--shiki-dark-font-weight);
     text-decoration: var(--shiki-dark-text-decoration);
   }
+}
+
+* {
+  max-inline-size: none;
 }
 </style>
