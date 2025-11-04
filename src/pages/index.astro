@@ -3,18 +3,21 @@ import { getCollection } from 'astro:content';
 
 import { getTitleFromPost } from '../util.astro';
 import Main from '../layouts/Main.astro';
+import Date from '../components/Date.astro';
 
-const posts = await getCollection('posts');
+const posts = (await getCollection('posts')).sort((a, b) =>
+  // newest -> oldest
+  b.data.published.valueOf() - a.data.published.valueOf())
 ---
 
 <Main title="Home">
   {await Promise.all(
     posts.map(async (post) => {
-      const title = await getTitleFromPost(post);
+      const title = post.data.title ?? await getTitleFromPost(post);
       return (
         <div>
           <p><a href={`/posts/${post.id}/`}>{title}</a></p>
-          <p>{post.data.published.toLocaleDateString()}</p>
+          <p><Date date={post.data.published} /></p>
         </div>
       );
     })

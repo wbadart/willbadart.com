@@ -6,6 +6,7 @@ interface Props {
 import 'open-props/style';
 import 'open-props/normalize';
 import 'open-props/buttons';
+import 'katex/dist/katex.css';
 
 import External from '../components/External.astro';
 
@@ -97,6 +98,7 @@ const amHome = Astro.url.pathname === '/';
 .astro-code {
   border-radius: var(--radius-conditional-3);
   padding: var(--size-4);
+  max-inline-size: none;
 }
 .astro-code,
 .astro-code span {

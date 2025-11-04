@@ -1,26 +1,38 @@
 ---
 import { getCollection, render } from 'astro:content';
 
-import { getTitleFromHeadings } from '../../util.astro';
+import { getTitleFromHeadings, getTitleFromPost, withNeighbors } from '../../util.astro';
 import Main from '../../layouts/Main.astro';
+import Date from '../../components/Date.astro';
 
 // https://docs.astro.build/en/guides/content-collections/#building-for-static-output-default
-export async function getStaticPaths() {
-  const posts = await getCollection('posts');
-  return posts.map(post => ({
+export const getStaticPaths = async () => {
+  const posts = (await getCollection('posts')).sort((a, b) =>
+    // newest -> oldest
+    b.data.published.valueOf() - a.data.published.valueOf())
+  return withNeighbors(posts).map(({ current: post, prev, next }) => ({
     params: { id: post.id },
-    props: { post },
+    props: { post, prev, next },
   }));
-}
+};
 
-const { post } = Astro.props;
+const { post, prev, next } = Astro.props;
 const { Content, headings } = await render(post);
-const title = getTitleFromHeadings(headings);
+const frontmatterTitle = post.data.title;
+const title = frontmatterTitle ?? getTitleFromHeadings(headings);
 ---
 
 <Main title={title}>
-  <p style={{fontFamily: 'var(--font-monospace-code)'}}>
-    {post.data.published.toLocaleDateString()}
-  </p>
+  <p><Date date={post.data.published} /></p>
+  {frontmatterTitle
+  && <h1>{frontmatterTitle}</h1>}
   <Content />
+
+  <footer>
+    <hr />
+    {prev
+      && <p>Previous:&nbsp;<a href={`/posts/${prev.id}/`}>{prev.data.title ?? getTitleFromPost(prev)}</a></p>}
+    {next
+      && <p>Next:&nbsp;<a href={`/posts/${next.id}/`}>{next.data.title ?? getTitleFromPost(next)}</a></p>}
+  </footer>
 </Main>

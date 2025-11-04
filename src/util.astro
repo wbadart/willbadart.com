@@ -9,4 +9,18 @@ export const getTitleFromPost = async (post: CollectionEntry<'posts'>): Promise<
 
 export const getTitleFromHeadings = (headings: MarkdownHeading[]): string =>
   headings.find(h => h.depth === 1)?.text ?? '';
+
+type Neighbors<T> = {
+  current: T,
+  prev: T | undefined,
+  next: T | undefined,
+}
+
+export const withNeighbors = <T,>(a: T[]): Neighbors<T>[] =>
+  a.map((current, index, orig) => ({
+    current,
+    // reverse signs for reverse chronological sorting
+    prev: orig?.[index + 1],
+    next: orig?.[index - 1],
+  }));
 ---

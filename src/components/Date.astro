@@ -1,0 +1,15 @@
+---
+interface Props {
+  date: Date;
+}
+
+const { date } = Astro.props;
+---
+
+<span>{date.toLocaleDateString()}</span>
+
+<style>
+span {
+  font-family: var(--font-monospace-code);
+}
+</style>

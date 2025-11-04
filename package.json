@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "astro": "^5.15.3",
+    "katex": "^0.16.25",
     "open-props": "^1.7.16"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.5",
     "@astrojs/language-server": "^2.16.0",
     "@astrojs/ts-plugin": "^1.10.5",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
     "typescript": "^5.9.3",
     "typescript-language-server": "^5.1.0"
   }
