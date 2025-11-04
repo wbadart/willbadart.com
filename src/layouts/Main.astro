@@ -1,0 +1,89 @@
+---
+interface Props {
+  title: string;
+}
+
+import 'open-props/style';
+import 'open-props/normalize';
+import 'open-props/buttons';
+import 'open-props/purple';
+
+import External from '../components/External.astro';
+
+const { title } = Astro.props;
+const amHome = Astro.url.pathname === '/';
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title} | Will Badart</title>
+  <script
+    is:inline
+    data-goatcounter="https://wbadart.goatcounter.com/count"
+    async
+    src="//gc.zgo.at/count.v5.js"
+    crossorigin="anonymous"
+    integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ"
+  ></script>
+
+  <style>
+    html,
+    body {
+      padding: var(--size-2);
+    }
+
+    h1 {
+      font-size: var(--font-size-4);
+    }
+
+    ul,
+    li {
+      padding-left: 0;
+    }
+
+    nav {
+      border-bottom: var(--border-size-2) solid var(--purple-7);
+      margin-bottom: var(--size-2);
+      padding: var(--size-2);
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    nav ul li {
+      flex: 1;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Will Badart</h1>
+    <nav>
+        <ul>
+          <li>
+            {amHome
+              ? <strong>Home</strong>
+              : <a href="/">Home</a>}
+          </li>
+          <li>
+            <External href="https://github.com/wbadart">GitHub</External>
+          </li>
+          <li>
+            <External href="https://linkedin.com/in/wbadart">LinkedIn</External>
+          </li>
+        </ul>
+    </nav>
+  </header>
+  <main>
+    <slot />
+  </main>
+  <noscript>
+    <img src={`https://wbadart.goatcounter.com/count?p=${Astro.url.pathname}`}>
+  </noscript>
+  </body>
+</html>

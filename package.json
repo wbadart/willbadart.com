@@ -4,11 +4,19 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.15.3"
+    "astro": "^5.15.3",
+    "open-props": "^1.7.16"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.5",
+    "@astrojs/language-server": "^2.16.0",
+    "@astrojs/ts-plugin": "^1.10.5",
+    "typescript": "^5.9.3",
+    "typescript-language-server": "^5.1.0"
   }
 }

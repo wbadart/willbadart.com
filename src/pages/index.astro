@@ -1,16 +1,32 @@
 ---
+import { getCollection } from 'astro:content';
 
+import { getTitleFromPost } from '../util.astro';
+import Main from '../layouts/Main.astro';
+
+const posts = await getCollection('posts');
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Main title="Home">
+  {await Promise.all(
+    posts.map(async (post) => {
+      const title = await getTitleFromPost(post);
+      return (
+        <div>
+          <p><a href={`/posts/${post.id}/`}>{title}</a></p>
+          <p>{post.data.published.toLocaleDateString()}</p>
+        </div>
+      );
+    })
+  )}
+</Main>
+
+<style>
+  div {
+    display: flex;
+    padding: var(--size-2);
+  }
+  div > p:nth-child(1) {
+    flex: 1;
+  }
+</style>
