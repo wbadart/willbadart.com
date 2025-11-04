@@ -4,6 +4,7 @@ published: 2020-01-15
 tags:
 - data science
 - software engineering
+- python
 categories:
 - hdsk
 ---

@@ -4,7 +4,6 @@ published: 2018-10-02
 tags:
   - programming
   - c
-  - hiring
   - tutorial
 ---
 

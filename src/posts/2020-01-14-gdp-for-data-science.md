@@ -5,6 +5,7 @@ tags:
 - data science
 - software engineering
 - functional programming
+- haskell
 categories:
 - hdsk
 ---

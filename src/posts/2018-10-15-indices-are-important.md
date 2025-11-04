@@ -4,6 +4,7 @@ published: 2018-10-15
 tags:
   - data science
   - tutorial
+  - python
 ---
 
 I recently joined the biggest data project I've ever been a part of at work.

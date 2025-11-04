@@ -1,6 +1,8 @@
 ---
 title:  Domain Theory, Take 1
 published: 2020-03-19
+tags:
+- functional programming
 ---
 
 I recently took a crack at Thomas Streicher's [_Domain-Theoretic

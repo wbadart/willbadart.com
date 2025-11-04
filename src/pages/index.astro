@@ -15,8 +15,14 @@ const posts = (await getCollection('posts')).sort((a, b) =>
     posts.map(async (post) => {
       const title = post.data.title ?? await getTitleFromPost(post);
       return (
-        <div>
-          <p><a href={`/posts/${post.id}/`}>{title}</a></p>
+        <div class="post">
+          <div>
+            <p><a href={`/posts/${post.id}/`}>{title}</a></p>
+            {post.data.tags?.length
+              && <p class="tags">
+                   {post.data.tags.map(tag => <span class="tag">{tag}</span>)}
+                 </p>}
+          </div>
           <p><Date date={post.data.published} /></p>
         </div>
       );
@@ -25,11 +31,28 @@ const posts = (await getCollection('posts')).sort((a, b) =>
 </Main>
 
 <style>
-  div {
-    display: flex;
-    padding: var(--size-2);
-  }
-  div > p:nth-child(1) {
-    flex: 1;
-  }
+div.post {
+  display: flex;
+  padding: var(--size-2);
+}
+div > div:nth-child(1) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+div > div:nth-child(1) > * {
+  padding: none;
+}
+
+.tags {
+  display: flex;
+  gap: var(--size-2);
+}
+
+.tag {
+  font-size: var(--font-size-0);
+  background-color: var(--surface-2);
+  border-radius: var(--radius-conditional-2);
+  padding: var(--size-1) var(--size-2);
+}
 </style>

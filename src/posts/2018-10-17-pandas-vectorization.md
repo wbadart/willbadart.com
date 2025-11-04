@@ -4,6 +4,7 @@ published: 2018-10-17
 tags:
   - data science
   - pandas
+  - python
 ---
 
 You may have heard about *vectorized* functions in the context of numpy, and
