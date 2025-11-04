@@ -19,5 +19,8 @@ const title = getTitleFromHeadings(headings);
 ---
 
 <Main title={title}>
+  <p style={{fontFamily: 'var(--font-monospace-code)'}}>
+    {post.data.published.toLocaleDateString()}
+  </p>
   <Content />
 </Main>

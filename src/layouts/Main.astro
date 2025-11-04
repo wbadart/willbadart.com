@@ -6,7 +6,6 @@ interface Props {
 import 'open-props/style';
 import 'open-props/normalize';
 import 'open-props/buttons';
-import 'open-props/purple';
 
 import External from '../components/External.astro';
 
@@ -46,7 +45,7 @@ const amHome = Astro.url.pathname === '/';
     }
 
     nav {
-      border-bottom: var(--border-size-2) solid var(--purple-7);
+      border-bottom: var(--border-size-2) solid var(--purple-8);
       margin-bottom: var(--size-2);
       padding: var(--size-2);
     }
@@ -96,7 +95,8 @@ const amHome = Astro.url.pathname === '/';
 
 <style is:global>
 .astro-code {
-  padding: var(--size-2);
+  border-radius: var(--radius-conditional-3);
+  padding: var(--size-4);
 }
 .astro-code,
 .astro-code span {
