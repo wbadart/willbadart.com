@@ -54,7 +54,7 @@ All that said, as our heroes have taught us, with great power, there must come g
 
 As computer science comes of age as a profession, or perhaps more specifically, as computer sciences become increasingly intertwined with critical infrastructure (on which many lives may depend), we must accept, nay welcome this increased trust *and* the higher expectations it ships with.
 
-![Challenger Disaster](../assets/images/wk00.challenger.jpg)
+![Challenger Disaster](./assets/wk00.challenger.jpg)
 
 This still leaves one key argument from Anna's thesis unaddressed:
 

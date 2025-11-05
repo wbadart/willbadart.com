@@ -65,7 +65,7 @@ miscellaneous thoughts that I feel ought to be documented. Stay tuned for
 further posts with the *hdsk* tag.
 
 [haskell vs]: https://web.archive.org/web/20190513061518/http://haskell.cs.yale.edu/wp-content/uploads/2011/03/HaskellVsAda-NSWC.pdf
-[haskell vs fig3]: ../assets/images/HaskellVs.png
+[haskell vs fig3]: ./assets/HaskellVs.png
 [rich]: https://github.com/richhickey
 [linkedin article]: https://www.linkedin.com/pulse/haskell-data-science-good-bad-ugly-tom-hutchins/
 [hdsk readme]: https://github.com/wbadart/hdsk

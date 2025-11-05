@@ -36,3 +36,12 @@ const title = frontmatterTitle ?? getTitleFromHeadings(headings);
       && <p>Next:&nbsp;<a href={`/posts/${next.id}/`}>{next.data.title ?? getTitleFromPost(next)}</a></p>}
   </footer>
 </Main>
+
+<style is:global>
+main :where(img[data-astro-image]) {
+  max-width: 100%;       /* respect parent width */
+  height: auto;
+  width: auto;           /* allow shrink below intrinsic width */
+  margin-inline: auto;   /* optional: center */
+}
+</style>

@@ -32,7 +32,7 @@ After reading around for a while, I found that I could get real, free certificat
 
 Wonderful.
 
-![](../assets/images/certbot.jpg)
+![Certbot logo](./assets/certbot.jpg)
 
 Too good to be true, right? Right. You may have noticed earlier that I'm running a t2.nano for a server. That's the wimpiest EC2 category, *smaller than what's offered in the free tier*. And it turns out my poor baby couldn't handle generating Diffie Hellman parameters with 4096 bit primes (a necessary step according to the bubbly installer).
 

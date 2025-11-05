@@ -6,6 +6,10 @@ import rehypeKatex from 'rehype-katex';
 export default defineConfig({
   site: 'https://willbadart.com',
   trailingSlash: 'always',
+  image: {
+    responsiveStyles: true,
+    layout: 'constrained',
+  },
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex],
