@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+
+import { getTitleFromPost } from '../../util.astro';
+import Main from '../../layouts/Main.astro';
+import ContentCard from '../../components/ContentCard.astro';
+
+const notes = await getCollection('notes');
+const titles =
+  (await Promise.all(notes.map(getTitleFromPost)))
+  .reduce(
+    (acc, title, i) => Object.assign(acc, { [notes[i].id]: title }),
+    {} as Record<string, string>);
+const sorted = notes.sort((a, b) =>
+  titles[a.id].localeCompare(titles[b.id]));
+---
+
+<Main title="Kasten">
+  {await Promise.all(
+    sorted.map(async (note) => {
+      const title = await getTitleFromPost(note);
+      return (
+        <ContentCard
+          type="notes"
+          id={note.id}
+          title={title}
+        />
+      );
+    })
+  )}
+</Main>

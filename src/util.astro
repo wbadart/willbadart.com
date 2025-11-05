@@ -1,8 +1,8 @@
 ---
 import type { MarkdownHeading } from 'astro';
-import { type CollectionEntry, render } from 'astro:content';
+import { type CollectionEntry, type CollectionKey, render } from 'astro:content';
 
-export const getTitleFromPost = async (post: CollectionEntry<'posts'>): Promise<string> => {
+export const getTitleFromPost = async (post: CollectionEntry<CollectionKey>): Promise<string> => {
   const { headings } = await render(post);
   return getTitleFromHeadings(headings);
 }

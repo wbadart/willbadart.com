@@ -6,8 +6,12 @@ const posts = defineCollection({
   schema: z.object({
     title: z.optional(z.string()),
     published: z.coerce.date(),
-    tags: z.optional(z.array(z.string())),
+    tags: z.array(z.string()).default([]),
   }),
 });
 
-export const collections = { posts };
+const notes = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/notes' }),
+});
+
+export const collections = { posts, notes };

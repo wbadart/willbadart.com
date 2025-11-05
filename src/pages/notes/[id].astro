@@ -1,0 +1,22 @@
+---
+import { getCollection, render } from 'astro:content';
+import { getTitleFromHeadings, } from '../../util.astro';
+import Main from '../../layouts/Main.astro';
+
+// https://docs.astro.build/en/guides/content-collections/#building-for-static-output-default
+export const getStaticPaths = async () => {
+  const notes = await getCollection('notes');
+  return notes.map(note => ({
+    params: { id: note.id },
+    props: { note },
+  }));
+};
+
+const { note } = Astro.props;
+const { Content, headings } = await render(note);
+const title = getTitleFromHeadings(headings);
+---
+
+<Main title={title}>
+  <Content />
+</Main>

@@ -1,0 +1,53 @@
+---
+import type { CollectionKey } from 'astro:content';
+import Date from './Date.astro';
+
+interface Props {
+  type: CollectionKey;
+  id: string;
+  title: string;
+  date?: Date;
+  tags?: string[];
+}
+
+const { type, id, title, date, tags } = Astro.props;
+---
+
+<div class="post">
+  <div>
+    <p><a href={`/${type}/${id}/`}>{title}</a></p>
+    {tags?.length
+      && <p class="tags">
+           {tags.map(tag => <span class="tag">{tag}</span>)}
+         </p>}
+  </div>
+  {date
+    && <p><Date date={date} /></p>}
+</div>
+
+<style>
+div.post {
+  display: flex;
+  padding: var(--size-2);
+}
+div > div:nth-child(1) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+div > div:nth-child(1) > * {
+  padding: none;
+}
+
+.tags {
+  display: flex;
+  gap: var(--size-2);
+}
+
+.tag {
+  font-size: var(--font-size-0);
+  background-color: var(--surface-2);
+  border-radius: var(--radius-conditional-2);
+  padding: var(--size-1) var(--size-2);
+}
+</style>
