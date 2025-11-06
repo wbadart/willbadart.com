@@ -38,6 +38,11 @@ div > div:nth-child(1) {
 div > div:nth-child(1) > * {
   padding: none;
 }
+@media (max-width: 400px) {
+  div.post {
+    flex-direction: column;
+  }
+}
 
 .tags {
   display: flex;
