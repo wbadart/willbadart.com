@@ -1,10 +1,9 @@
 ---
+title: Correction for "GDP for Data Science"
 published: 2025-11-25 18:31Z-0600MST
 tags:
 - haskell
 ---
-
-# Correction for "GDP for Data Science"
 
 If my blog were Stack Overflow, I think this post would earn me an _Excavator_ badge.
 

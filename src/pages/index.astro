@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 
-import { getTitleFromPost } from '../util.astro';
 import Main from '../layouts/Main.astro';
 import ContentCard from '../components/ContentCard.astro';
 
@@ -13,12 +12,11 @@ const posts = (await getCollection('posts')).sort((a, b) =>
 <Main title="Home">
   {await Promise.all(
     posts.map(async (post) => {
-      const title = post.data.title ?? await getTitleFromPost(post);
       return (
         <ContentCard
           type="posts"
           id={post.id}
-          title={title}
+          title={post.data.title}
           date={post.data.published}
           tags={post.data.tags}
         />
