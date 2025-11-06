@@ -15,6 +15,11 @@ libraries. GDP and the related approaches leverage Haskell's
 expressive type system to enable the compiler to detect user errors
 which violate the preconditions of an algorithm.
 
+1. [Arguing for Correctness](/posts/2020-01-10-arguing-for-correctness/)
+2. [The Argument from Types](/posts/2020-01-13-argument-from-types/)
+3. [GDP For Data Science](/posts/2020-01-14-gdp-for-data-science/) (<-- prereq for this
+   post)
+
 Unfortunately, not many data scientists are using Haskell today, so
 to use GDP directly, most teams would have to switch languages.
 
