@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/rss": "^4.0.13",
     "astro": "^5.15.3",
     "katex": "^0.16.25",
     "open-props": "^1.7.16"

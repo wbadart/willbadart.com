@@ -21,6 +21,12 @@ const amHome = Astro.url.pathname === '/';
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
   <title>{title} | Will Badart</title>
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="willbadart.com"
+    href={new URL("feed.xml", Astro.site)}
+  />
   <script
     is:inline
     data-goatcounter="https://wbadart.goatcounter.com/count"
@@ -58,6 +64,11 @@ const amHome = Astro.url.pathname === '/';
       flex: 1;
       text-align: center;
     }
+    @media (max-width: 400px) {
+      nav ul {
+        flex-direction: column;
+      }
+    }
 
     main {
       display: flex;
@@ -77,6 +88,9 @@ const amHome = Astro.url.pathname === '/';
             {amHome
               ? <strong>Home</strong>
               : <a href="/">Home</a>}
+          </li>
+          <li>
+            <a href="/feed.xml">RSS</a>
           </li>
           <li>
             <External href="https://github.com/wbadart">GitHub</External>
