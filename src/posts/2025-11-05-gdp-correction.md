@@ -29,8 +29,8 @@ give better, more domain-relevant error messages in the process.
 
 I contrived an example about a preprocessing pipeline that, as it worked, accumulated
 proof that each processing step had been performed. These proofs were later discharged
-to satisfy clustering and classification algorithms that had these steps in their
-preconditions:
+to satisfy the preconditions of the library's clustering and classification algorithms
+(not pictured):
 
 ```haskell
 data Normalized
