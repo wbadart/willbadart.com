@@ -85,7 +85,11 @@ ignore the bits between the triple-dashes (`---`) for now.
 
 To set your site's style, login to GitHub and navigate to the
 repository you created in step 2. Under the *Settings* tab
-(`https://github.com/myusername/myusername.github.io/settings`),
+
+```
+https://github.com/myusername/myusername.github.io/settings
+```
+
 you'll see a section for GitHub Pages configuration with a tool for
 selecting a theme.
 
