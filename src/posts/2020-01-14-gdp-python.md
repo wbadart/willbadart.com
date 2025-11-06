@@ -144,7 +144,11 @@ class NoMissingVals:
 ways to handle missing values. The use of the enum type above
 constrains users to the missing value handling methods defined by
 `MissingValueHandler` (no other argument would type check). A call
-would look like `NoMissingVals(df, MissingValueHandler.DROP)`.
+would look like
+
+```python
+NoMissingVals(df, MissingValueHandler.DROP)
+```
 
 Here's how these classes look as preconditions on our machine
 learning algorithms:
