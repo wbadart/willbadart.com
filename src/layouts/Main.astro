@@ -3,12 +3,16 @@ interface Props {
   title: string;
 }
 
+import { Picture } from 'astro:assets';
+
 import 'open-props/style';
 import 'open-props/normalize';
 import 'open-props/buttons';
 import 'katex/dist/katex.css';
 
 import External from '../components/External.astro';
+import LicenseBadge from '../assets/cc-by-nc.svg';
+import NotByAI from '../assets/not-by-ai.svg';
 
 const { title } = Astro.props;
 const amHome = Astro.url.pathname === '/';
@@ -106,12 +110,52 @@ const amHome = Astro.url.pathname === '/';
   </header>
   <main>
     <slot />
+    <footer>
+      <div><small>&copy;2017&ndash;2025 Will Badart</small></div>
+      <div>
+        <Picture
+          src={LicenseBadge}
+          alt="Creative Commons License - BY-NC"
+        />
+        <Picture
+          src={NotByAI}
+          alt="Not by AI"
+        />
+      </div>
+    </footer>
   </main>
   <noscript>
     <img src={`https://wbadart.goatcounter.com/count?p=${Astro.url.pathname}`}>
   </noscript>
   </body>
 </html>
+
+<style>
+footer {
+  display: flex;
+  flex-direction: row;
+  margin: var(--size-3) 0;
+}
+
+footer > div:nth-child(1) {
+  flex: 1;
+}
+
+footer > div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+}
+
+footer > div:nth-child(2) img {
+  max-width: 60px;
+}
+
+@media (max-width: 400px) {
+  footer {
+    flex-direction: column;
+  }
+}
+</style>
 
 <style is:global>
 .astro-code {
@@ -140,5 +184,9 @@ const amHome = Astro.url.pathname === '/';
 
 * {
   max-inline-size: none;
+}
+
+hr {
+  margin-block: var(--size-fluid-2);
 }
 </style>
