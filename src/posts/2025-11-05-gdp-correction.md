@@ -1,6 +1,6 @@
 ---
 title: Correction for "GDP for Data Science"
-published: 2025-11-25 18:31Z-0600MST
+published: 2025-11-06 18:31Z-0600MST
 tags:
 - haskell
 ---
