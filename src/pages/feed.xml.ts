@@ -10,7 +10,7 @@ export const GET: APIRoute = async ({ site }) => {
     site: site!,
     items: posts.map(post => ({
       title: post.data.title,
-      link: `/posts/${post.id}`,
+      link: `/posts/${post.id}?src=rss`,
       // TODO: investigate adding full content
     })),
   });
