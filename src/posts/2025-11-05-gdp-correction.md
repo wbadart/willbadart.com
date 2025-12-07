@@ -18,7 +18,7 @@ process I documented in the [previous post]), I found my coverage of Matt Noonan
 [_Ghosts of Departed Proofs_][gdp].
 
 [previous post]: /posts/2025-11-05-astro/
-[gdp]: http://localhost:4321/posts/2020-01-14-gdp-for-data-science/
+[gdp]: /posts/2020-01-14-gdp-for-data-science/
 
 At a previous job, I undertook a research project investigating how to apply GDP to data
 science (a project, I should add, that I _greatly_ enjoyed). The idea was to encode
