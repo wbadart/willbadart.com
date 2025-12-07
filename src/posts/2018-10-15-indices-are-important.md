@@ -58,7 +58,7 @@ of the red team dataset) to construct, and another `O(R)` to `&` together, and
 the relevant elements). This approach takes 3:45" to tag 100,000 netflow
 events.
 
-![There must be a better way!](/assets/images/better_way.png)
+![There must be a better way!](./assets/better_way.png)
 
 Raymond has the right of it, there must be a better way.
 
