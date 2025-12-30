@@ -1,8 +1,9 @@
 ---
-title: In praise of Rocky Linux + Quadlet
+title: In praise of Quadlet + Rocky Linux
 published: 2025-12-30 09:00Z-0700MST
 tags:
 - linux
+- sysadmin
 ---
 
 Inside me there are two wolves: a Purist and a Pragmatist.
