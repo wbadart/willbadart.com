@@ -10,9 +10,10 @@ export const GET: APIRoute = async ({ site }) => {
     title: 'willbadart.com',
     description: "Will's posts and notes",
     site: site!,
+    trailingSlash: false,
     items: posts.map(post => ({
       title: post.data.title,
-      link: `/posts/${post.id}?src=rss`,
+      link: `/posts/${post.id}/?src=rss`,
       // TODO: investigate adding full content
     })),
   });
