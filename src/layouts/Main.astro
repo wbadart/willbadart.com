@@ -113,14 +113,18 @@ const amHome = Astro.url.pathname === '/';
     <footer>
       <div><small>&copy;2017&ndash;2026 Will Badart</small></div>
       <div>
-        <Picture
-          src={LicenseBadge}
-          alt="Creative Commons License - BY-NC"
-        />
-        <Picture
-          src={NotByAI}
-          alt="Not by AI"
-        />
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">
+          <Picture
+            src={LicenseBadge}
+            alt="Creative Commons License - BY-NC"
+          />
+        </a>
+        <a href="https://notbyai.fyi/#not-by-ai-mission" target="_blank">
+          <Picture
+            src={NotByAI}
+            alt="Not by AI"
+          />
+        </a>
       </div>
     </footer>
   </main>
