@@ -13,13 +13,13 @@ recursive function separately from the mechanical specifics of recursing.
 
 | Name | Characterization | Takes
 |------|------------------|------
-| [Catamorphism](./234411dc) | `foldr` | F-algebra: `f a -> a`
-| [Anamorphism](./4bb5719e) | `unfoldr` | F-coalgebra: `a -> f a`
-| [Paramorphism](./8e03ceba) | primitive recursion | R-algebra: `f (Fix f, a) -> a`
-| [Apomorphism](./b48c52f0) | primitive corecursion | R-coalgebra: `a -> f (Fix f \| a)`
-| [Zygomorphism](./3b8573c9) | fold with helper algebra | helper algebra and main algebra
-| [Hylomorphism](./c5c9b27a) | produce then consume | an F-coalgebra and an F-algebra
-| [Histomorphism](./59fc6bcf) | history-preserving fold | CV-algebra: `f (Attr f a) -> a`
+| [Catamorphism](/notes/234411dc) | `foldr` | F-algebra: `f a -> a`
+| [Anamorphism](/notes/4bb5719e) | `unfoldr` | F-coalgebra: `a -> f a`
+| [Paramorphism](/notes/8e03ceba) | primitive recursion | R-algebra: `f (Fix f, a) -> a`
+| [Apomorphism](/notes/b48c52f0) | primitive corecursion | R-coalgebra: `a -> f (Fix f \| a)`
+| [Zygomorphism](/notes/3b8573c9) | fold with helper algebra | helper algebra and main algebra
+| [Hylomorphism](/notes/c5c9b27a) | produce then consume | an F-coalgebra and an F-algebra
+| [Histomorphism](/notes/59fc6bcf) | history-preserving fold | CV-algebra: `f (Attr f a) -> a`
 | futumorphism | forward-info-passing unfold | CV-coalgebra: `a -> f (CoAttr f a)`
 | (chronomorphism) | produce then consume (w/ extra capability) | a CV-coalgebra and a CV-algebra
 
